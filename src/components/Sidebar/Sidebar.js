@@ -9,6 +9,8 @@ import StorefrontIcon from '@material-ui/icons/Storefront';
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
+import './Sidebar.css';
+
 function Sidebar() {
     return (
         <div className="sidebar">

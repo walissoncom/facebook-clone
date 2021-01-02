@@ -13,3 +13,12 @@ h1, h2, h3 {
 h4, h5 {
     font-weight: 400;
 }
+
+.app {
+    background-color: #f1f2f5;
+    height: 100vh;
+}
+
+.app__body {
+    display: flex;
+}
