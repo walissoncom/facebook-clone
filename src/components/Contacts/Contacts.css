@@ -1,0 +1,24 @@
+.contacts {
+    width: 300px;
+    padding-top: 25px;
+}
+
+.contacts__header {
+    display: flex;
+    color: gray;
+}
+
+.contacts__headerLeft {
+    flex: 1;
+    padding: 5px;
+}
+
+.contacts__headerRight > .MuiSvgIcon-root {
+    margin-right: 12px;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.contacts__headerRight > .MuiSvgIcon-root:hover {
+    background-color: lightgray;
+}

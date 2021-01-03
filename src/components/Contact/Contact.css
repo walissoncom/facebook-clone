@@ -1,0 +1,15 @@
+.contact {
+    display: flex;
+    align-items: center;
+    padding: 10px 5px;;
+}
+
+.contact:hover {
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+.contact > h4 { 
+    margin-left: 12px;
+    color: #707070;
+}
