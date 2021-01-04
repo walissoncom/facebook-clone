@@ -4,11 +4,14 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Feed from './components/Feed/Feed';
 import Contacts from './components/Contacts/Contacts';
 
+import { useStateValue } from './StateContext';
+
 import './App.css';
 
 function App() {
 
-  const user = null;
+  const [{ user }, dispatch] = useStateValue();
+  console.log(user);
 
   return (
     <div className="app">
