@@ -79,3 +79,7 @@
 .header__right {
     display: flex;
 }
+
+.header__right > .MuiSvgIcon-root {
+    padding: 12px 10px;
+}

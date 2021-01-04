@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { useStateValue } from '../../StateContext';
+
 import SearchIcon from '@material-ui/icons/Search';
 import HomeIcon from '@material-ui/icons/Home';
 import FlagIcon from '@material-ui/icons/Flag';
@@ -15,6 +17,9 @@ import { Avatar, IconButton } from '@material-ui/core';
 import './Header.css';
 
 function Header() {
+
+    const [{ user }, dispatch] = useStateValue();
+
     return (
         <div className="header">
             <div className="header__left">
@@ -46,8 +51,8 @@ function Header() {
 
             <div className="header__right">
                 <div className="header__info">
-                    <Avatar />
-                    <h4>Walisson</h4>
+                    <Avatar src={user.photoURL} />
+                    <h4>{user.displayName}</h4>
                 </div>
 
                 <IconButton>
