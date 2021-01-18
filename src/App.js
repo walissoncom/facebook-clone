@@ -4,6 +4,8 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Feed from './components/Feed/Feed';
 import Contacts from './components/Contacts/Contacts';
 
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 import { useStateValue } from './StateContext';
 
 import './App.css';
@@ -14,20 +16,31 @@ function App() {
 
   return (
     <div className="app">
+      <Router>
 
-      {!user ? (
-        <Login />
-      ) : (
-          <>
-            <Header />
+        {!user ? (
+          <Login />
+        ) : (
+            <>
+              <Header />
 
-            <div className="app__body">
-              <Sidebar />
-              <Feed />
-              <Contacts />
-            </div>
-          </>
-        )}
+              <Switch>
+
+                <Route exact path="/">
+                  <div className="app__body">
+                    <Sidebar />
+                    <Feed />
+                    <Contacts />
+                  </div>
+                </Route>
+
+                <Route path="/news">
+                  <h1>News</h1>
+                </Route>
+              </Switch>
+            </>
+          )}
+      </Router>
     </div>
   );
 }
