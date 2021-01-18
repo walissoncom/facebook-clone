@@ -1,8 +1,6 @@
 import Login from './components/Login/Login';
-import Header from './components/Header/Header';
-import Sidebar from './components/Sidebar/Sidebar';
-import Feed from './components/Feed/Feed';
-import Contacts from './components/Contacts/Contacts';
+import Home from './pages/Home/Home';
+import News from './pages/News/News';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -22,21 +20,16 @@ function App() {
           <Login />
         ) : (
             <>
-              <Header />
-
               <Switch>
 
                 <Route exact path="/">
-                  <div className="app__body">
-                    <Sidebar />
-                    <Feed />
-                    <Contacts />
-                  </div>
+                  <Home />
                 </Route>
 
                 <Route path="/news">
-                  <h1>News</h1>
+                  <News />
                 </Route>
+
               </Switch>
             </>
           )}

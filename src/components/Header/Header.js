@@ -17,9 +17,13 @@ import { Avatar, IconButton } from '@material-ui/core';
 
 import './Header.css';
 
-function Header() {
+function Header({ active }) {
 
     const [{ user }, dispatch] = useStateValue();
+
+    const isActive = value => {
+        return 'header__option ' + ((value === active) ? 'header__option---active' : '')
+    }
 
     return (
         <div className="header">
@@ -36,20 +40,30 @@ function Header() {
             </div>
 
             <div className="header__middle">
-                <div className="header__option header__option---active">
-                    <HomeIcon fontSize="large" />
+                <div className={isActive('home')}>
+                    <Link to="/">
+                        <HomeIcon fontSize="large" />
+                    </Link>
+                </div>
+                <div className={isActive('news')}>
+                    <Link to="/news">
+                        <FlagIcon fontSize="large" />
+                    </Link>
                 </div>
                 <div className="header__option">
-                    <FlagIcon fontSize="large" />
+                    <Link to="/">
+                        <SubscriptionsIcon fontSize="large" />
+                    </Link>
                 </div>
                 <div className="header__option">
-                    <SubscriptionsIcon fontSize="large" />
+                    <Link to="/">
+                        <StorefrontIcon fontSize="large" />
+                    </Link>
                 </div>
                 <div className="header__option">
-                    <StorefrontIcon fontSize="large" />
-                </div>
-                <div className="header__option">
-                    <SupervisedUserCircleIcon fontSize="large" />
+                    <Link to="/">
+                        <SupervisedUserCircleIcon fontSize="large" />
+                    </Link>
                 </div>
             </div>
 
